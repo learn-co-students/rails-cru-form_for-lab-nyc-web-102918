@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Songs</h1>
+    <% @songs.each do |song| %>
+        <p><%= song.name %></p>
+        <p><%= song.artist.name + " " + song.genre.name%>
+        <%= link_to 'Show', song %>
+        <%= link_to 'Edit', edit_song_path(song) %>
+        <%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+
+
+<br>
+
+<%= link_to 'New Song', new_song_path %>
